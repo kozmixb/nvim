@@ -1,6 +1,24 @@
--- Defaults
-vim.g.have_nerd_font = false
 vim.opt.number = true
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+vim.opt.wrap = false
+
+vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+vim.opt.undofile = true
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.opt.updatetime = 50
+
+vim.g.have_nerd_font = false
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.breakindent = true
@@ -17,13 +35,6 @@ vim.opt.confirm = true
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
-
--- Save undo history
-vim.opt.undofile = true
-
--- Special whitespaces
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
