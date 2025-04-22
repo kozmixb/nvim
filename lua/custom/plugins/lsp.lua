@@ -79,8 +79,9 @@ return {
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map('<C-Space>', '<C-x><C-o>', 'LSP Trigger code completion', 'i')
         map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+        map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
         map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
         map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
         map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
